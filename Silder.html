@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .Slider-img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="Slider">
+        <img class="Slider-img" src="https://picsum.photos/id/537/1000/500" alt="">
+        <img class="Slider-img" src="https://picsum.photos/id/337/1000/500" alt="">
+        <img class="Slider-img" src="https://picsum.photos/id/437/1000/500" alt="">
+        <img class="Slider-img" src="https://picsum.photos/id/637/1000/500" alt="">
+        <img class="Slider-img" src="https://picsum.photos/id/737/1000/500" alt="">
+        <img class="Slider-img" src="https://picsum.photos/id/837/1000/500" alt="">
+        <img class="Slider-img" src="https://picsum.photos/id/937/1000/500" alt="">
+        <img class="Slider-img" src="https://picsum.photos/id/137/1000/500" alt="">
+    </div>
+    <script>
+        var SliderData = document.getElementsByClassName ("Slider-img")
+        counter = 0
+        function Slider(){
+            for (let index = 0; index < SliderData.length ; index++ ){
+                console.log(SliderData[index]) ;
+                SliderData[index].style.display="none"
+            }
+            if (counter >= SliderData.length){
+                counter = 0;
+            }
+            SliderData[counter].style.display="block"
+            counter++;
+
+            setTimeout(Slider,2000) ;
+        }
+        Slider()
+    </script>
+</body>
+</html>
